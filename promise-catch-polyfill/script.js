@@ -8,7 +8,6 @@
     Promise.prototype.myCatch = myCatch;
 
     Promise.prototype.then = function(...args) {
-        console.log(args, this);
         let result;
         try {
             result = originalThen.apply(this, args);
