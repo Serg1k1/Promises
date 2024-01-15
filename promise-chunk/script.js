@@ -4,14 +4,15 @@ async function run(arr, chunk) {
     const arrChunk = arr.slice(i, i + chunk);
     newArr.push(arrChunk);
   }  
+
   const resultArr = [];
+  
   for (let i = 0; i < newArr.length; i++) {
     let promises = newArr[i];
     for (let j = 0; j < promises.length; j++) {
       let result = await promises[j]();
       resultArr.push(result);
     }
-    
   }
   return resultArr;
 }
